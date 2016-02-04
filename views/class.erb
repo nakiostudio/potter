@@ -1,0 +1,21 @@
+//
+//  Automatically generated file
+//  Copyright © 2016 Lyst Ltd. All rights reserved.
+//
+
+import Foundation
+import RealmSwift
+import ObjectMapper
+
+public class <%= @target_class.keys.first.to_s %>: Object, Mappable {
+
+<%= @properties %>
+    required convenience public init?(_ map: Map) {
+        self.init()
+    }
+
+    public func mapping(map: Map) {
+
+    }
+
+}
