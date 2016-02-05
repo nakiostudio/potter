@@ -29,8 +29,10 @@ module Potter
       command :tests do |c|
         c.syntax = "Potter"
         c.description = Potter::DESCRIPTION
+        c.option '--input STRING', String, 'Path to the input .yml file'
+        c.option '--output STRING', String, 'Path to the output folder'
         c.action do |args, options|
-          puts args
+          puts "> #{options.input}"
           Potter::Manager.new.work(options)
         end
       end

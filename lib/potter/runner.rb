@@ -11,11 +11,11 @@ module Potter
     end
 
     def read_yaml
-      classes = YAML.load(File.open("/Users/nakio/Desktop/test.yml"))
-      puts classes
+      classes = YAML.load(File.open(Potter.input))
+      
       for target_class in classes
         @target_class = target_class
-        File.open(File.join("/Users/nakio/Desktop", "#{target_class.keys.first.to_s}.swift"), "wb") do |file|
+        File.open(File.join(Potter.output, "#{target_class.keys.first.to_s}.swift"), "wb") do |file|
           properties = ""
           properties_dict = target_class[target_class.keys.first]
           properties_dict.each do |property|
