@@ -31,6 +31,7 @@ module Potter
         c.description = Potter::DESCRIPTION
         c.option '--input STRING', String, 'Path to the input .yml file'
         c.option '--output STRING', String, 'Path to the output folder'
+        c.option '--language STRING', String, 'Target language. Options available: swift'
         c.action do |args, options|
           puts "> #{options.input}"
           Potter::Manager.new.work(options)
